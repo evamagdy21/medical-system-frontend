@@ -1,13 +1,22 @@
-.navbar {
+
+.navbar{
     background-color:#105674;
-  
+    position: absolute;
+    left: 0;
+    right: 0;
+    color: white;
+    z-index: 10000;
 }
 .nav-link{
     color:white !important;
 }
+.navbar-nav{
+    text-align: initial;
+  }
 .navbar-brand img{
     width: 3em;
 }
+
 .active{
     color:#BFA947;
   
@@ -16,3 +25,11 @@
     -webkit-box-shadow: 0 -3px 0 0 #00a887 inset;
     box-shadow: 0 -3px 0 0 #00a887 inset;
 }
+
+  .navbar-brand{
+    text-align: initial;
+  }
+  .navbar-toggler-icon {
+    background-image: url(../../../../assets/images/menu.png);
+  
+  }
