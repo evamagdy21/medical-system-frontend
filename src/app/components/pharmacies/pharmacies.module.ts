@@ -5,7 +5,7 @@ import { PharmaciesRoutingModule } from './pharmacies-routing.module';
 import { PharmaciesComponent } from '../pharmacies/pharmacies.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import {NgxPaginationModule} from 'ngx-pagination';
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [PharmaciesComponent],
@@ -14,7 +14,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
     PharmaciesRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    Ng2SearchPipeModule
   ]
 })
 export class PharmaciesModule { }

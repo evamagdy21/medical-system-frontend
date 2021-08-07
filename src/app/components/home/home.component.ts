@@ -10,7 +10,7 @@ export class HomeComponent implements OnInit {
   @Input() Hospitals: any;
   @ViewChild("oneItem") oneItem: any;
   @ViewChildren("count") count: QueryList<any>;
-
+  CityBanner: string ="../../../assets/images/UAE.webp";
   constructor(private uaeService: UaeService) {
     this.Hospitals = this.uaeService.getUaeData();
   }

@@ -4,7 +4,7 @@ import { InsuranceRoutingModule } from './insurance-routing.module';
 import { InsuranceComponent } from '../insurance/insurance.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import {NgxPaginationModule} from 'ngx-pagination';
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [InsuranceComponent],
@@ -14,6 +14,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
     NgxPaginationModule,
     FormsModule,
     ReactiveFormsModule,
+    Ng2SearchPipeModule
   ]
 })
 export class InsuranceModule { }

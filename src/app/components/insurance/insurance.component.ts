@@ -22,6 +22,7 @@ export class InsuranceComponent implements OnInit {
   count = 0;
   pageSize = 5;
   pageSizes = [5, 10, 15];
+  name;
   constructor(private uaeService: UaeService, private router: Router, private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {

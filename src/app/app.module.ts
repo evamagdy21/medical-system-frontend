@@ -10,15 +10,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxSpinnerModule } from "ngx-spinner";
-import { IonicModule } from '@ionic/angular';
 import { ContentComponent } from './components/shared/content/content.component';
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    ContentComponent
+    ContentComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +28,7 @@ import { ContentComponent } from './components/shared/content/content.component'
     NgbModule,
     BrowserAnimationsModule,
     NgxSpinnerModule,
-    IonicModule.forRoot()
+    Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

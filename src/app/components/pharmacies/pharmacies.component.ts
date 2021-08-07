@@ -21,7 +21,8 @@ export class PharmaciesComponent implements OnInit {
   page = 1;
   count = 0;
   pageSize = 5;
-  pageSizes = [5, 10, 15];
+  pageSizes = [5, 10, 15];  
+  name;
   constructor(private uaeService: UaeService, private router: Router, private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {

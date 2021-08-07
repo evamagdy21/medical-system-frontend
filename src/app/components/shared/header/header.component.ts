@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild,ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,13 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() {
- 
-   }
+  className: any;
+  @ViewChild('stickyMenu', { static: false }) menuElement: ElementRef;
+  constructor() { }
 
   ngOnInit(): void {
-    
+
   }
+  
 
 }

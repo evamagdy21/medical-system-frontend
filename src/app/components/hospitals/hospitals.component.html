@@ -5,14 +5,31 @@
     <div class="row fullscreen d-flex align-items-center">
       <div class="col-12 text-center m-auto" style=" padding: 7rem;"><br>
         <form>
-          <div class="form-group justify-content-center">
-            <select class="custom-select" name="uae" (change)='onUAESelected($event)' required>
-              <option [value]="undefined" disabled selected hidden>Select Your City</option>
-              <option [value]="cityname.name" *ngFor="let cityname of City;">
-                {{cityname.name}}
-              </option>
-            </select>
-
+          <div class="form-group row has-search justify-content-center">
+            <div class="col-xl-12 col-md-12 col-lg-12 col-sm-12 col-xs-12 p-0">
+              <select class="custom-select" name="uae" (change)='onUAESelected($event)' required>
+                <option [value]="undefined" disabled selected hidden>Select Your City</option>
+                <option [value]="cityname.name" *ngFor="let cityname of City;">
+                  {{cityname.name}}
+                </option>
+              </select>
+            </div>
+            <!-- <div class="col-xl-4 col-md-4 col-lg-4 col-sm-12 col-xs-12 p-0">
+              <span class="fa fa-search form-control-feedback"></span>
+              <input class="form-control" type="text" name="search" [(ngModel)]="name" autocomplete="off"
+                placeholder="Start searching for a hospital or a clinic by name ">
+            </div> -->
+            <!-- <div class="col-xl-4 col-md-4 col-lg-4 col-sm-12 col-xs-12 p-0">
+              <select class="custom-select" name="uae" (change)='SortSelected($event)' required>
+                <option [value]="undefined" disabled selected hidden>Sort</option>
+                <option [value]="" >
+                  Ascending
+                </option>
+                <option [value]="" >
+                  Descending
+                </option>
+              </select>
+            </div> -->
           </div>
         </form>
       </div>
@@ -26,18 +43,18 @@
     <div class="col-lg-7 col-md-7 col-xl-7 col-sm-7 p-9">
       <div class="card">
         <div class="card-body card-body1 text-center"
-          *ngFor="let hospital of hospitals_clinics | paginate : {itemsPerPage: pageSize,currentPage: page, totalItems: count};let i = index">
+          *ngFor="let hospital of hospitals_clinics | filter:name  | orderBy:'name' | paginate : {itemsPerPage: pageSize,currentPage: page, totalItems: count};let i = index">
           <div class="row card-text" (click)="HospitalDetails(hospital._id)">
-            <div class="col-lg-3 col-md-12 col-xl-3 col-sm-12" >
+            <div class="col-lg-3 col-md-12 col-xl-3 col-sm-12">
               <img class="card-img-top" [src]="hospital.logo" alt="Card image cap">
             </div>
             <div class="col-lg-9 col-md-12 col-xl-9 col-sm-12 text-left">
               <h5 class="card-title">{{hospital.name}}</h5>
               <p> <strong>Address</strong> : {{hospital.address}}</p>
               <p><strong>Location</strong>: {{hospital.location}}</p>
-                  <div *ngIf="hospital.founded !=null">
-                    <p><strong>Founded </strong> : {{hospital.founded}}</p>
-                  </div>
+              <div *ngIf="hospital.founded !=null">
+                <p><strong>Founded </strong> : {{hospital.founded}}</p>
+              </div>
             </div>
           </div>
         </div>
@@ -72,6 +89,6 @@
         you will find the clinic address, contact number, reviews, and website to help you find the right one.
       </p>
     </div>
-       <!-- paragraph section end -->
+    <!-- paragraph section end -->
   </div>
 </div>

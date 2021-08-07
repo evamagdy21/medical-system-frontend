@@ -1,6 +1,0 @@
-.overflow-scroll { overflow-y: auto; }
-.content {
-    overflow: auto;
-    overscroll-behavior: contain;
-    height: 300px;
-  }

@@ -6,19 +6,26 @@
     <div class="row fullscreen d-flex align-items-center">
       <div class="col-12 text-center m-auto" style=" padding: 7rem;"><br>
         <form>
-          <div class="form-group justify-content-center">
-            <select class="custom-select" name="uae" (change)='onUAESelected($event)' required>
-              <option [value]="undefined" disabled selected hidden>Select Your City</option>
-              <option>
-                Abu Dhabi
-              </option>
-              <option>
-                Dubai
-              </option>
-              <option>
-                Sharjah
-              </option>
-            </select>
+          <div class="form-group row has-search justify-content-center">
+            <div class="col-xl-12 col-md-12 col-lg-12 col-sm-12 col-xs-12 p-0">
+              <select class="custom-select" name="uae" (change)='onUAESelected($event)' required>
+                <option [value]="undefined" disabled selected hidden>Select Your City</option>
+                <option>
+                  Abu Dhabi
+                </option>
+                <option>
+                  Dubai
+                </option>
+                <option>
+                  Sharjah
+                </option>
+              </select>
+            </div>
+            <!-- <div class="col-xl-6 col-md-6 col-lg-6 col-sm-12 col-xs-12 p-0">
+              <span class="fa fa-search form-control-feedback"></span>
+              <input class="form-control" type="text" name="search" [(ngModel)]="name" autocomplete="off"
+                placeholder="Start searching for a Insurance Company by name ">
+            </div> -->
           </div>
         </form>
       </div>
@@ -32,7 +39,7 @@
     <div class="col-lg-7 col-md-7 col-xl-7 col-sm-7 p-9">
       <div class="card">
         <div class="card-body card-body1 text-center"
-          *ngFor="let insurance of insurance_companies | paginate : {itemsPerPage: pageSize,currentPage: page, totalItems: count};let i = index">
+          *ngFor="let insurance of insurance_companies | filter:name| paginate : {itemsPerPage: pageSize,currentPage: page, totalItems: count};let i = index">
           <div class="row card-text" (click)="InsuranceDetails(insurance._id)">
             <div class="col-lg-3 col-md-12 col-xl-3 col-sm-12">
               <img class="card-img-top" [src]="insurance.logo" alt="Card image cap">
