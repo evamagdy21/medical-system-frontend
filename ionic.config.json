@@ -1,0 +1,7 @@
+{
+  "name": "medical-system",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

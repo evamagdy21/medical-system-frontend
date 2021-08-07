@@ -10,7 +10,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { IonicModule } from '@ionic/angular';
 import { ContentComponent } from './components/shared/content/content.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +28,8 @@ import { ContentComponent } from './components/shared/content/content.component'
     ReactiveFormsModule,
     NgbModule,
     BrowserAnimationsModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    IonicModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
